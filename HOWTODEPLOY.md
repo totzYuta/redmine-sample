@@ -15,4 +15,16 @@ In my case, an error of rmagick occured when execute `$ bundle install`. I just 
 $ brew install imagemagick
 ```
 
+```
+heroku create your_redmine_app_name
+git add -A
+git commit -m "prepare for heroku"
+git push heroku 2.1-stable:master
+```
 
+```
+heroku run rake db:migrate
+heroku run rake redmine:load_default_data
+heroku restart
+heroku open
+```
